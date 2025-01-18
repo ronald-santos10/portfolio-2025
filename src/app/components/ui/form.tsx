@@ -71,6 +71,7 @@ export const Form = () => {
         required
         className="text-zinc-50 stroke-custom outline-none p-5 rounded-lg bg-custom-gradient"
       />
+      {/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
       <textarea
         name="message"
         value={formData.message}
@@ -78,7 +79,8 @@ export const Form = () => {
         onChange={handleChange}
         className="text-zinc-50 stroke-custom outline-none p-5 rounded-lg bg-custom-gradient"
       ></textarea>
-      <Button label="Enviar" onClick={handleSubmit} />
+      {/* Envolvendo o handleSubmit em uma função anônima */}
+      <Button label="Enviar" onClick={() => handleSubmit} />
     </form>
   );
 };
