@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { About } from "./components/about";
 import { Contact } from "./components/contact";
 import { Cta } from "./components/cta";
@@ -6,6 +7,7 @@ import { Header } from "./components/header";
 import { Hero } from "./components/hero";
 import { Services } from "./components/services";
 import { Works } from "./components/works";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
@@ -28,6 +30,8 @@ export default function Home() {
       <footer className="flex flex-col gap-20 md:gap-40 mx-auto max-w-7xl px-5 md:px-0">
         <Footer />
       </footer>
+      <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
