@@ -2,7 +2,6 @@
 
 import axios from "axios";
 import { useState } from "react";
-import { Button } from "./button";
 
 export const Form = () => {
   const [formData, setFormData] = useState({
@@ -79,8 +78,12 @@ export const Form = () => {
         onChange={handleChange}
         className="text-zinc-50 stroke-custom outline-none p-5 rounded-lg bg-custom-gradient"
       ></textarea>
-      {/* Envolvendo o handleSubmit em uma função anônima */}
-      <Button label="Enviar" onClick={() => handleSubmit} />
+      <button
+        type="submit"
+        className="flex items-center justify-center cursor-pointer text-center font-bold rounded-md md:rounded-lg py-3 px-5 md:py-4 md:px-9 bg-primary text-bg"
+      >
+        Enviar
+      </button>
     </form>
   );
 };
