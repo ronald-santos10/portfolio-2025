@@ -1,18 +1,24 @@
-import type { Config } from "tailwindcss";
-
+/** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#00A4FF",
+        bg: "#101010",
+        dark: "#0C0C0C"
+      },
+      fontFamily: {
+        sans: "Archivo",
+      },
+      boxShadow: {
+        custom: "0px 3px 7.7px rgba(0, 0, 0, 0.25)",
+      },
+      backgroundImage: {
+        "custom-gradient": "linear-gradient(0deg, #202020 0%, #121212 100%)",
+        "custom-radial": "radial-gradient(circle, #202020 0%, #121212 100%)",
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
