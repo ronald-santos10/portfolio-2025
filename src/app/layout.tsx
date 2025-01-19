@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <main>{children}</main>
+        <GoogleAnalytics gaId="G-ZK6H01943X" />
         <GoogleTagManager gtmId="GTM-NQG3J4HB" />
       </body>
     </html>
