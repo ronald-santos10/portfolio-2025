@@ -8,10 +8,12 @@ import { Hero } from "./components/hero";
 import { Services } from "./components/services";
 import { Works } from "./components/works";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export default function Home() {
   return (
     <div>
+      <GoogleTagManager gtmId="GTM-NQG3J4HB" />
       <header>
         <Header />
       </header>
