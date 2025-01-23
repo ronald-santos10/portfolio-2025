@@ -15,15 +15,17 @@ export const metadata: Metadata = {
     "Aprimore sua presença digital com soluções sob medida em desenvolvimento web, design de sites responsivos e criação de identidades visuais. Transforme suas ideias em resultados reais. Solicite um orçamento agora!",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
+
+  const { lang } = await params;
   return (
-    <html lang={params.lang}>
+    <html lang={(await params).lang}>
       <body>
         <main>{children}</main>
         <GoogleAnalytics gaId="G-ZK6H01943X" />
