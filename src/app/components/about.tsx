@@ -1,4 +1,12 @@
-export function About() {
+import { getDictionaryUseClient } from "@/dicionaries/default-dictionary-use-client";
+import type { Locale } from "@/config/i18n.config";
+
+interface HeaderProps {
+  lang: Locale;
+}
+
+export function About({ lang }: HeaderProps) {
+  const { dictionary } = getDictionaryUseClient(lang);
   return (
     <div
       id="about"
@@ -11,18 +19,10 @@ export function About() {
       />
       <div className="flex flex-col gap-4 md:gap-6 justify-center items-center md:justify-start md:items-start">
         <h3 className="text-primary font-bold text-2xl md:text-3xl">
-          Prazer, sou Ronald Santos
+          {dictionary.about.title}
         </h3>
         <p className="text-zinc-50 text-center md:text-left font-light md:text-xl">
-          Sou <strong>desenvolvedor Front-end</strong> e{" "}
-          <strong>web designer</strong>, com 22 anos e uma paixão por
-          transformar ideias em soluções digitais. Comecei no{" "}
-          <strong>design</strong> em 2019, criando{" "}
-          <strong>identidades visuais</strong> e materiais para pequenos
-          negócios. Hoje, com formação em Análise e
-          <strong> Desenvolvimento de Sistemas</strong>, me dedico a{" "}
-          <strong>criar sites e aplicações</strong>
-          usando tecnologias como React, Next.js, TypeScript e Tailwind CSS.
+          {dictionary.about.description}
         </p>
       </div>
     </div>

@@ -1,11 +1,19 @@
-export function Works() {
+import { getDictionaryUseClient } from "@/dicionaries/default-dictionary-use-client";
+import type { Locale } from "@/config/i18n.config";
+
+interface HeaderProps {
+  lang: Locale;
+}
+
+export function Works({ lang }: HeaderProps) {
+  const { dictionary } = getDictionaryUseClient(lang);
   return (
     <div
       id="works"
       className="flex flex-col gap-6 md:gap-14 justify-center items-center mx-auto"
     >
       <h2 className="text-center md:text-left text-3xl md:text-5xl text-zinc-50 font-light">
-        Projetos de sucesso que <span className="font-bold">criam Impacto</span>
+        {dictionary.projects.title}
       </h2>
       <div className="flex flex-col gap-3 md:flex-row md:gap-14 md:flex-wrap justify-center items-center mx-auto">
         <div className="w-auto md:w-[498px] md:h-[426px] rounded-xl z-10 relative transition-all duration-500 md:hover:scale-105">
@@ -20,7 +28,7 @@ export function Works() {
               className="z-10 w-full h-full rounded-xl object-cover grayscale transition-all duration-500 hover:grayscale-0"
             />
             <span className="absolute bottom-4 left-4 bg-primary py-2 px-4 rounded-full font-bold text-bg z-20">
-              Identidade Visual
+              {dictionary.projects.items.branding1}
             </span>
           </a>
         </div>
@@ -37,7 +45,7 @@ export function Works() {
               className="z-10 w-full h-full rounded-xl object-cover grayscale transition-all duration-500 hover:grayscale-0"
             />
             <span className="absolute bottom-4 left-4 bg-primary py-2 px-4 rounded-full font-bold text-bg z-20">
-              Identidade Visual
+              {dictionary.projects.items.branding2}
             </span>
           </a>
         </div>
@@ -54,7 +62,7 @@ export function Works() {
               className="z-10 w-full h-full rounded-xl object-cover grayscale transition-all duration-500 hover:grayscale-0"
             />
             <span className="absolute bottom-4 left-4 bg-primary py-2 px-4 rounded-full font-bold text-bg z-20">
-              Site Institucional
+              {dictionary.projects.items.website}
             </span>
           </a>
         </div>
@@ -71,7 +79,7 @@ export function Works() {
               className="z-10 w-full h-full rounded-xl object-cover grayscale transition-all duration-500 hover:grayscale-0"
             />
             <span className="absolute bottom-4 left-4 bg-primary py-2 px-4 rounded-full font-bold text-bg z-20">
-              App Design
+              {dictionary.projects.items.app}
             </span>
           </a>
         </div>

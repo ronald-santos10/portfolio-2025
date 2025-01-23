@@ -2,8 +2,15 @@
 
 import axios from "axios";
 import { useState } from "react";
+import { getDictionaryUseClient } from "@/dicionaries/default-dictionary-use-client";
+import type { Locale } from "@/config/i18n.config";
 
-export const Form = () => {
+interface HeaderProps {
+  lang: Locale;
+}
+
+export const Form = ({ lang }: HeaderProps) => {
+  const { dictionary } = getDictionaryUseClient(lang);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,7 +53,7 @@ export const Form = () => {
         type="text"
         name="name"
         value={formData.name}
-        placeholder="Nome"
+        placeholder={dictionary.contact.form.name}
         onChange={handleChange}
         required
         className="text-zinc-50 stroke-custom outline-none p-5 rounded-lg bg-custom-gradient"
@@ -55,7 +62,7 @@ export const Form = () => {
         type="email"
         name="email"
         value={formData.email}
-        placeholder="E-mail"
+        placeholder={dictionary.contact.form.email}
         onChange={handleChange}
         required
         className="text-zinc-50 stroke-custom outline-none p-5 rounded-lg bg-custom-gradient"
@@ -64,7 +71,7 @@ export const Form = () => {
         type="text"
         name="phone"
         value={formData.phone}
-        placeholder="Telefone"
+        placeholder={dictionary.contact.form.phone}
         onChange={handleChange}
         maxLength={11}
         required
@@ -74,7 +81,7 @@ export const Form = () => {
       <textarea
         name="message"
         value={formData.message}
-        placeholder="Mais alguma informação? Fique à vontade."
+        placeholder={dictionary.contact.form.message}
         onChange={handleChange}
         className="text-zinc-50 stroke-custom outline-none p-5 rounded-lg bg-custom-gradient"
       ></textarea>
@@ -82,7 +89,7 @@ export const Form = () => {
         type="submit"
         className="flex items-center justify-center cursor-pointer text-center font-bold rounded-md md:rounded-lg py-3 px-5 md:py-4 md:px-9 bg-primary text-bg"
       >
-        Enviar
+        {dictionary.contact.button}
       </button>
     </form>
   );

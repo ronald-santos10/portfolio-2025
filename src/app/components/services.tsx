@@ -1,11 +1,19 @@
-export function Services() {
+import { getDictionaryUseClient } from "@/dicionaries/default-dictionary-use-client";
+import type { Locale } from "@/config/i18n.config";
+
+interface HeaderProps {
+  lang: Locale;
+}
+
+export function Services({ lang }: HeaderProps) {
+  const { dictionary } = getDictionaryUseClient(lang);
   return (
     <div
       id="services"
       className="flex flex-col gap-6 md:gap-12 justify-center items-center mx-auto"
     >
       <h2 className="text-zinc-50 text-2xl md:text-4xl font-light text-center">
-        O que posso fazer <span className="font-bold">por você?</span>
+        {dictionary.services.title}
       </h2>
 
       <div className="flex flex-col gap-6 md:flex-row">
@@ -16,10 +24,10 @@ export function Services() {
             className="shadow-custom rounded-full w-[60px]"
           />
           <h3 className="text-zinc-50 font-bold text-xl">
-            Design de Sites e Apps
+            {dictionary.services.design.title}
           </h3>
           <p className="text-zinc-50 font-light text-center text-xl">
-            Sites modernos e responsivos que encantam e convertem.
+            {dictionary.services.design.description}
           </p>
         </div>
         <div className="stroke-custom max-w-[332px] flex flex-col justify-center items-center gap-5 bg-custom-gradient p-8 rounded-lg">
@@ -29,10 +37,10 @@ export function Services() {
             className="shadow-custom rounded-full w-[60px]"
           />
           <h3 className="text-zinc-50 font-bold text-xl">
-            Desenvolvimento Web
+            {dictionary.services.development.title}
           </h3>
           <p className="text-zinc-50 font-light text-center text-xl">
-            Tecnologia robusta para soluções digitais escaláveis.
+            {dictionary.services.development.description}
           </p>
         </div>
         <div className="stroke-custom max-w-[332px] flex flex-col justify-center items-center gap-5 bg-custom-gradient p-8 rounded-lg">
@@ -41,9 +49,11 @@ export function Services() {
             alt="Identidade Visual"
             className="shadow-custom rounded-full w-[60px]"
           />
-          <h3 className="text-zinc-50 font-bold text-xl">Identidade Visual</h3>
+          <h3 className="text-zinc-50 font-bold text-xl">
+            {dictionary.services.branding.title}
+          </h3>
           <p className="text-zinc-50 font-light text-center text-xl">
-            Marcas que se destacam e comunicam sua essência.
+            {dictionary.services.branding.description}
           </p>
         </div>
       </div>

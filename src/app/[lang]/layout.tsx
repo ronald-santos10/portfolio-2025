@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
+import "../../app/globals.css";
+import { i18n } from "@/config/i18n.config";
 
-import "./globals.css";
+export async function generateStaticParams() {
+  const languages = i18n.locales.map((lang) => ({ lang }));
+  return languages;
+}
 
 export const metadata: Metadata = {
   title:
@@ -12,11 +17,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: { lang: string };
+}) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body>
         <main>{children}</main>
         <GoogleAnalytics gaId="G-ZK6H01943X" />
