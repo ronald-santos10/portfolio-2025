@@ -17,7 +17,7 @@ export function About({ lang }: HeaderProps) {
         alt="Ronald Santos Desenvolvedor e Web Designer"
         className="w-64 md:w-[429px]"
       />
-      <div className="flex flex-col gap-4 md:gap-6 justify-center items-center md:justify-start md:items-start">
+      <div className="flex flex-col gap-4 md:gap-6 justify-center items-center md:justify-start md:items-start md:max-w-[495px]">
         <h3 className="text-primary font-bold text-2xl md:text-3xl">
           {dictionary.about.title}
         </h3>

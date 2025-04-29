@@ -4,12 +4,11 @@ export const enUS = {
     services: "Services",
     works: "Works",
     about: "About",
-    contact: "Contact",
   },
   hero: {
     title: "Turn your ideas into Amazing Digital Solutions",
     subtitle:
-      "Website and App development with fully personalized design and a focus on your Results.",
+      "Fill out the form and start transforming your brand now!",
     contact_button: "Get in Touch",
   },
   services: {
@@ -26,6 +25,7 @@ export const enUS = {
       title: "Visual Identity",
       description: "Brands that stand out and communicate your essence.",
     },
+    button: "Get started now!"
   },
   cta: {
     title:

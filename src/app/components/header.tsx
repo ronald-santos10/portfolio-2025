@@ -52,6 +52,12 @@ export const Header = ({ lang, setLang }: HeaderProps) => {
             {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
             <button
               className="text-base font-bold transition duration-300 ease-in-out hover:text-primary"
+              onClick={() => scrollToSection("about")}
+            >
+              {dictionary.nav.about}
+            </button>
+            <button
+              className="text-base font-bold transition duration-300 ease-in-out hover:text-primary"
               onClick={() => scrollToSection("services")}
             >
               {dictionary.nav.services}
@@ -64,19 +70,6 @@ export const Header = ({ lang, setLang }: HeaderProps) => {
               {dictionary.nav.works}
             </button>
             {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-            <button
-              className="text-base font-bold transition duration-300 ease-in-out hover:text-primary"
-              onClick={() => scrollToSection("about")}
-            >
-              {dictionary.nav.about}
-            </button>
-            {/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-            <button
-              className="text-base font-bold transition duration-300 ease-in-out hover:text-primary"
-              onClick={() => scrollToSection("contact")}
-            >
-              {dictionary.nav.contact}
-            </button>
           </nav>
           <select
             value={lang}

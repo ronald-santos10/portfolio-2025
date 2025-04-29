@@ -48,7 +48,7 @@ export const Form = ({ lang }: HeaderProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-4">
       <input
         type="text"
         name="name"

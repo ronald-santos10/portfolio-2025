@@ -4,12 +4,11 @@ export const ptBR = {
     services: "Serviços",
     works: "Trabalhos",
     about: "Sobre",
-    contact: "Contato",
   },
   hero: {
     title: "Transforme suas ideias em Soluções Digitais Incríveis",
     subtitle:
-      "Desenvolvimento de Sites e Apps com design totalmente personalizado e foco nos seus Resultados.",
+      "Preencha o formulário e comece agora a transformação da sua marca!",
     contact_button: "Entre em Contato",
   },
   services: {
@@ -26,6 +25,7 @@ export const ptBR = {
       title: "Identidade Visual",
       description: "Marcas que se destacam e comunicam sua essência.",
     },
+    button: "Comece agora mesmo!"
   },
   cta: {
     title:

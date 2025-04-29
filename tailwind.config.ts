@@ -6,7 +6,8 @@ export default {
       colors: {
         primary: "#00A4FF",
         bg: "#101010",
-        dark: "#0C0C0C"
+        dark: "#0C0C0C",
+        footer: "#0C0C0C"
       },
       fontFamily: {
         sans: "Archivo",

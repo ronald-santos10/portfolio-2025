@@ -1,5 +1,7 @@
 import { getDictionaryUseClient } from "@/dicionaries/default-dictionary-use-client";
 import type { Locale } from "@/config/i18n.config";
+import { Button } from "./ui/button";
+import { scrollToSection } from "@/utils/scroll-to-section";
 
 interface HeaderProps {
   lang: Locale;
@@ -12,7 +14,7 @@ export function Services({ lang }: HeaderProps) {
       id="services"
       className="flex flex-col gap-6 md:gap-12 justify-center items-center mx-auto"
     >
-      <h2 className="text-zinc-50 text-2xl md:text-4xl font-light text-center">
+      <h2 className="text-zinc-50 text-2xl md:text-4xl font-medium text-center">
         {dictionary.services.title}
       </h2>
 
@@ -57,6 +59,11 @@ export function Services({ lang }: HeaderProps) {
           </p>
         </div>
       </div>
+
+      <Button
+        label={dictionary.services.button}
+        onClick={() => scrollToSection("contact")}
+      />
     </div>
   );
 }
